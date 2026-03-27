@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аромат Кофе - Уютная кофейня</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Навигация */
+        nav {
+            background: #2c1810;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #d4a574;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        /* Герой секция */
+        .hero {
+            margin-top: 60px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%238B4513" width="1200" height="600"/><path fill="%23D2691E" d="M0 300Q300 200 600 300T1200 300V600H0Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #d4a574;
+            color: #2c1810;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Секции */
+        section {
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c1810;
+        }
+
+        /* О нас */
+        .about {
+            background: #f9f5f0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Меню */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .menu-item h3 {
+            color: #2c1810;
+            margin: 1rem 0;
+            font-size: 1.5rem;
+        }
+
+        .price {
+            color: #d4a574;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        /* Контакты */
+        .contact {
+            background: #2c1810;
+            color: white;
+        }
+
+        .contact h2 {
+            color: #d4a574;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .contact-item {
+            padding: 1rem;
+        }
+
+        .contact-item h3 {
+            color: #d4a574;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Футер */
+        footer {
+            background: #1a0f0a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Навигация -->
+    <nav>
+        <ul>
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#menu">Меню</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <!-- Герой секция -->
+    <section class="hero" id="home">
+        <div>
+            <h1>☕ Аромат Кофе</h1>
+            <p>Лучший кофе в городе с душой и любовью</p>
+            <a href="#menu" class="btn">Смотреть меню</a>
+        </div>
+    </section>
+
+    <!-- О нас -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>О нашей кофейне</h2>
+            <div class="about-content">
+                <div>
+                    <p>Мы варим кофе с 2015 года и за это время стали любимым местом для тысяч гостей. 
+                    Используем только зерна премиум класса, обжаренные лучшими мастерами.</p>
+                    <br>
+                    <p>У нас вы найдете уютную атмосферу, дружелюбный персонал и десерты, 
+                    которые тают во рту.</p>
+                </div>
+                <div style="background: #d4a574; height: 300px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #2c1810; font-size: 1.2rem;">
+                    [Фото кофейни]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Меню -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <h2>Наше меню</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>Эспрессо</h3>
+                    <p>Классический крепкий кофе</p>
+                    <div class="price">150 ₽</div>
+                </div>
+                <div class="menu-item">
+                    <h3>Капучино</h3>
+                    <p>Нежный кофе с молочной пенкой</p>
+                    <div class="price">250 ₽</div>
+                </div>
+                <div class="menu-item">
+                    <h3>Латте</h3>
+                    <p>Мягкий кофе с большим количеством молока</p>
+                    <div class="price">270 ₽</div>
+                </div>
+                <div class="menu-item">
+                    <h3>Американо</h3>
+                    <p>Классический черный кофе</p>
+                    <div class="price">180 ₽</div>
+                </div>
+                <div class="menu-item">
+                    <h3>Флэт Уайт</h3>
+                    <p>Двойной эспрессо с молоком</p>
+                    <div class="price">280 ₽</div>
+                </div>
+                <div class="menu-item">
+                    <h3>Раф</h3>
+                    <p>Авторский кофе со сливками</p>
+                    <div class="price">320 ₽</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Контакты</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📍 Адрес</h3>
+                    <p>г. Москва, ул. Кофейная, 15</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📞 Телефон</h3>
+                    <p>+7 (999) 123-45-67</p>
+                </div>
+                <div class="contact-item">
+                    <h3>⏰ Режим работы</h3>
+                    <p>Пн-Пт: 8:00 - 22:00<br>Сб-Вс: 9:00 - 23:00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <p>&copy; 2024 Аромат Кофе. Все права защищены.</p>
+    </footer>
+
+    <script>
+        // Плавная прокрутка
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
